@@ -1,0 +1,29 @@
+<div class='main'>
+    <div class='currency-wrap container'>
+        <div class='currency-wrap__item'>
+            <input class='currency-wrap__amount' type="number" 
+                [value]="firstAmount | aroundNumber"
+                (input)="setSecondAmount()"
+                [(ngModel)]="firstAmount "
+                />
+            <select class='currency-wrap__select' name="currency"
+                (change)="setFirstCurrency($event)">
+                <option *ngFor="let currency of dataAll" value={{currency.r030}}>
+                    {{currency.cc}}:{{currency.txt}}</option> 
+            </select>
+        </div>
+        <div class='currency-wrap__item'>
+            <input class='currency-wrap__amount' type="number" min="1"
+                [(ngModel)]='secondAmount'
+                (input)="setFirstAmount()"
+                [value]="secondAmount | aroundNumber"/>   
+            <select class='currency-wrap__select' name="currency"
+                (change)="setSecondCurrency($event)">
+                <option *ngFor="let currency of dataAll" value={{currency.r030}}>
+                    {{currency.cc}}:{{currency.txt}}
+                </option> 
+            </select>
+        </div>
+    </div>
+</div>
+
