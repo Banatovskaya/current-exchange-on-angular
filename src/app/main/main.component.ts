@@ -41,7 +41,7 @@ export class MainComponent implements OnInit {
     setSecondCurrency = (e : any) => {
         const id = e.target.value      
         this.secondCurrency = this.dataAll.filter(el => (el.r030 == id))[0]; 
-        this.setSecondAmount(); //when the currency-name is changing, the amount of currency is changing only in second input
-                                //because it is more comfortable for user
+        this.setSecondAmount(); //when the currency-name is changing, the amount of currency is changing in second input
+                                //because it is more comfortable for user/ But you can change it on adding this.setFirstAmount()
     };
 }
